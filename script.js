@@ -181,7 +181,7 @@ function bindNav() {
 
 /* ====== PRINT ====== */
 function bindPrint() {
-  $("#printBtn")?.addEventListener("click", () => window.print());
+  $("#printBtn")?.addEventListener("click", () => window.open('documents/CV_Romain_SANJIVY.pdf', '_blank'));
 }
 
 /* ====== INIT ====== */
