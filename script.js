@@ -26,7 +26,10 @@ const PROJECTS = [
     periode: "2025-2026",
     desc: "Site web vitrine pour une salle de sport développé en autonomie.",
     tags: ["Solo", "PHP", "MySQL", "JavaScript", "CSS"],
-    liens: [{ label: "GitHub", url: "https://github.com/Romain-SNVY78/Le_Muscle_Sympa" }]
+    liens: [
+      { label: "Voir le site", url: "http://lms.testoxylog.fr/" },
+      { label: "GitHub", url: "https://github.com/Romain-SNVY78/Le_Muscle_Sympa" }
+    ]
   },
   {
     id: "p6",
