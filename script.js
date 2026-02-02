@@ -16,7 +16,7 @@ const PROJECTS = [
     contexte: "Projet de groupe",
     periode: "2025-2026",
     desc: "Application web de gestion de tickets développée en équipe.",
-    tags: ["Groupe", "Web", "PHP", "SQL", "Back-end"],
+    tags: ["Groupe", "Web", "PHP", "MySQL", "Back-end"],
     liens: [{ label: "GitHub", url: "#" }]
   },
   {
@@ -25,7 +25,7 @@ const PROJECTS = [
     contexte: "Projet individuel",
     periode: "2025-2026",
     desc: "Site web vitrine pour une salle de sport développé en autonomie.",
-    tags: ["Solo", "Python"],
+    tags: ["Solo", "PHP", "MySQL", "JavaScript", "CSS"],
     liens: [{ label: "GitHub", url: "https://github.com/Romain-SNVY78/Le_Muscle_Sympa" }]
   },
   {
@@ -34,7 +34,7 @@ const PROJECTS = [
     contexte: "Projet personnel (hors formation)",
     periode: "2025-2026",
     desc: "Site web de réservation pour une maison de vacances, conçu pour un usage personnel.",
-    tags: ["Perso", "Web", "Front-end"],
+    tags: ["Perso", "HTML", "CSS", "JavaScript", "Front-end"],
     liens: [{ label: "GitHub", url: "https://github.com/Romain-SNVY78/Maison_Kerlouan" }]
   }
 ];
