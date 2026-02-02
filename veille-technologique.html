@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Veille Technologique — Portfolio Romain SANJIVY</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="image/valise.jpg" alt="Logo du portfolio" class="logo" />
+        <span class="brand-text">Portfolio — Veille Technologique</span>
+      </div>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navMenu">Menu</button>
+        <ul id="navMenu">
+          <li><a href="index.html#accueil">Accueil</a></li>
+          <li><a href="index.html#apropos">À propos</a></li>
+          <li><a href="index.html#projets">Projets</a></li>
+          <li><a href="index.html#e5">E5</a></li>
+          <li><a href="index.html#e6">E6</a></li>
+          <li><a href="index.html#veille">Veille Techno</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="actions">
+        <button id="themeToggle" class="btn ghost" aria-pressed="false" aria-label="Basculer le thème">🌓</button>
+        <a class="btn ghost" href="index.html">← Retour</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container">
+      <h1>Veille Technologique</h1>
+
+      <div class="card" style="margin-top:1rem;">
+        <h2>Présentation</h2>
+        <p>
+          La <strong>veille technologique</strong> est un processus d'observation continue des évolutions, innovations et tendances technologiques pertinentes pour mon domaine.
+          Cette démarche m'aide à rester à jour sur les meilleures pratiques, les outils émergents et les risques de sécurité.
+        </p>
+      </div>
+
+      <div class="pill-card" style="margin-top:1rem;">
+        <h3>Domaines de suivi</h3>
+        <ul class="list">
+          <li><strong>Cybersécurité :</strong> Vulnérabilités, malwares, bonnes pratiques OWASP, authentification moderne.</li>
+          <li><strong>Développement Web :</strong> Frameworks (React, Vue, Next.js), standards HTTP/REST, performance.</li>
+          <li><strong>Architecture :</strong> Microservices, API design, patterns et clean code.</li>
+          <li><strong>DevOps & Infrastructure :</strong> Docker, Kubernetes, CI/CD, monitoring, cloud services.</li>
+          <li><strong>Bases de données :</strong> SQL & NoSQL, optimisation, sécurité des données.</li>
+        </ul>
+      </div>
+
+      <section style="margin-top:1.5rem;">
+        <h2>Sources et Outils de Veille</h2>
+        <p>Les informations sont collectées via différents canaux pour assurer une couverture complète et pertinente.</p>
+
+        <div class="grid two" style="margin-top:1rem;">
+          <article class="card project">
+            <div class="card-body">
+              <h3 class="project-title">Plateformes & Blogs</h3>
+              <p class="project-meta">Ressources principales d'apprentissage</p>
+              <ul class="list">
+                <li><strong>DEV.to :</strong> Articles techniques et best practices de développeurs.</li>
+                <li><strong>Medium :</strong> Analyses approfondies sur architecture et sécurité.</li>
+                <li><strong>HackerNews :</strong> Actualités tech et sécurité critiques.</li>
+                <li><strong>OWASP Blog :</strong> Mise à jour des risques de sécurité web.</li>
+                <li><strong>Mozilla Security Blog :</strong> Études et avis de sécurité.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card project">
+            <div class="card-body">
+              <h3 class="project-title">Newsletters & Réseaux</h3>
+              <p class="project-meta">Actualités régulières et discussions communautaires</p>
+              <ul class="list">
+                <li><strong>JavaScript Weekly :</strong> Tendances et bibliothèques JavaScript.</li>
+                <li><strong>Frontend Focus :</strong> Développement frontend et UX/UI.</li>
+                <li><strong>Reddit (r/webdev, r/cybersecurity) :</strong> Discussions communautaires.</li>
+                <li><strong>Twitter/X :</strong> Suivi d'experts en cybersécurité et développement.</li>
+                <li><strong>GitHub Trending :</strong> Projets et librairies populaires.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section style="margin-top:1.5rem;">
+        <h2>Articles et Analyses Récents</h2>
+        <p>Synthèse des découvertes et apprentissages majeurs.</p>
+
+        <div style="margin-top:1rem;">
+          <div class="pill-card">
+            <h3>À compléter</h3>
+            <p>
+              Les articles et analyses seront ajoutés au fur et à mesure de la veille. 
+              Chaque entrée contiendra le sujet, la source, la date et un résumé des points clés.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <p style="margin-top:1rem; color:var(--muted);">
+        <em>Dernière mise à jour : 20 janvier 2026</em>
+      </p>
+    </div>
+  </main>
+
+  <script>
+    // Gestion du thème (même logique que sur la page principale)
+    const themeBtn = document.getElementById("themeToggle");
+    function applyTheme(mode) {
+      if (mode === "light") {
+        document.documentElement.setAttribute("data-theme", "light");
+      } else {
+        document.documentElement.removeAttribute("data-theme");
+      }
+      localStorage.setItem("theme", mode);
+    }
+    if (themeBtn) {
+      const savedTheme = localStorage.getItem("theme") || "dark";
+      applyTheme(savedTheme);
+      themeBtn.addEventListener("click", () => {
+        const current = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+        const next = current === "light" ? "dark" : "light";
+        applyTheme(next);
+      });
+    }
+  </script>
+
+  <!-- Behaviour script (nav binding) -->
+  <script src="script.js"></script>
+</body>
+</html>

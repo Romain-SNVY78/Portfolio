@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dossier E6 — Parcours Professionnel — Romain SANJIVY</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="image/valise.jpg" alt="Logo du portfolio" class="logo" />
+        <span class="brand-text">Portfolio — E6 : Parcours Professionnel</span>
+      </div>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navMenu">Menu</button>
+        <ul id="navMenu">
+          <li><a href="index.html#accueil">Accueil</a></li>
+          <li><a href="index.html#apropos">À propos</a></li>
+          <li><a href="index.html#projets">Projets</a></li>
+          <li><a href="index.html#e5">E5</a></li>
+          <li><a href="index.html#e6">E6</a></li>
+          <li><a href="index.html#veille">Veille Techno</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="actions">
+        <button id="themeToggle" class="btn ghost" aria-pressed="false" aria-label="Basculer le thème">🌓</button>
+        <a class="btn ghost" href="index.html">← Retour</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container">
+      <h1>Épreuve E6 — Parcours Professionnel</h1>
+
+      <div class="card" style="margin-top:1rem;">
+        <h2>Présentation</h2>
+        <p>
+          L’épreuve <strong>E6</strong> « Parcours de professionnalisation » évalue les compétences acquises au cours des missions réalisées en entreprise.
+          Chaque mission est illustrée par un dossier comprenant la documentation technique, les tests et les fiches de réalisation.
+        </p>
+      </div>
+
+      <div class="pill-card" style="margin-top:1rem;">
+        <h3>Contenu attendu (détaillé)</h3>
+        <ul class="list">
+          <li>Deux missions professionnelles documentées avec contexte, objectifs et contraintes.</li>
+          <li>Documentation technique et utilisateur (installation, architecture, schémas, captures).</li>
+          <li>Fiche descriptive et fiche de réalisation (rôle, tâches effectuées, durée, outils).</li>
+          <li>Analyse personnelle du parcours, bilan des compétences et axes d'amélioration.</li>
+          <li>Preuves : extraits de code, captures d'écran, logs, rapports de test, livrables (PDF/ZIP).</li>
+        </ul>
+      </div>
+
+      <section style="margin-top:1.5rem;">
+        <h2>Mes missions / Projets (E6)</h2>
+        <p>Ci-dessous les deux projets retenus pour l'épreuve.</p>
+
+        <div class="grid two" style="margin-top:1rem;">
+          <article class="card project">
+            <div class="card-body">
+              <h3 class="project-title">RMS Ticket</h3>
+              <p class="project-meta">Entreprise / Période — Rôle : Développeur</p>
+              <p class="project-desc">Système de gestion de tickets pour le support interne : création, suivi, affectation, priorisation et historique des interventions.</p>
+              <ul class="list">
+                <li><strong>Responsabilités :</strong> Conception des modèles, développement backend, création de l'interface de suivi, tests fonctionnels.</li>
+                <li><strong>Technologies :</strong> PHP, JavaScript, HTML/CSS, MySQL (exemples).</li>
+                <li><strong>Base de données :</strong> Modèle relationnel avec tables utilisateurs, tickets, commentaires, historiques.</li>
+                <li><strong>Preuves :</strong> Captures d'écran, extraits de code, fiche de réalisation (à joindre).</li>
+                <li><strong>Lien :</strong> <em>À venir — dépôt GitHub / URL du serveur</em></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card project">
+            <div class="card-body">
+              <h3 class="project-title">Le Muscle Sympa</h3>
+              <p class="project-meta">Entreprise / Période — Rôle : Développeur / Intégrateur</p>
+              <p class="project-desc">Application ou site pour la gestion d'un club sportif : planning des séances, suivi des adhérents, gestion des abonnements.</p>
+              <ul class="list">
+                <li><strong>Responsabilités :</strong> Intégration UI, connexion à la base, fonctions d'administration, documentation utilisateur.</li>
+                <li><strong>Technologies :</strong> HTML/CSS, JavaScript, possible backend (ex : Node/PHP).</li>
+                <li><strong>Base de données :</strong> Tables adhérents, séances, paiements, historiques.</li>
+                <li><strong>Preuves :</strong> Captures, rapports de tests, fiche de réalisation (à joindre).</li>
+                <li><strong>Lien :</strong> <em><a href="https://github.com/Romain-SNVY78/Le_Muscle_Sympa">https://github.com/Romain-SNVY78/Le_Muscle_Sympa</a></em></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    // Gestion du thème (même logique que sur la page principale)
+    const themeBtn = document.getElementById("themeToggle");
+    function applyTheme(mode) {
+      if (mode === "light") {
+        document.documentElement.setAttribute("data-theme", "light");
+      } else {
+        document.documentElement.removeAttribute("data-theme");
+      }
+      localStorage.setItem("theme", mode);
+    }
+    if (themeBtn) {
+      const savedTheme = localStorage.getItem("theme") || "dark";
+      applyTheme(savedTheme);
+      themeBtn.addEventListener("click", () => {
+        const current = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+        const next = current === "light" ? "dark" : "light";
+        applyTheme(next);
+      });
+    }
+  </script>
+
+  <!-- Behaviour script (nav, print binding) -->
+  <script src="script.js"></script>
+</body>
+</html>
