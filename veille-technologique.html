@@ -36,77 +36,248 @@
     <div class="container">
       <h1>Veille Technologique</h1>
 
-      <div class="card" style="margin-top:1rem;">
-        <h2>Présentation</h2>
+      <!-- SUJET DE VEILLE -->
+      <div class="card" style="margin-top:1.5rem;">
+        <h2>🔐 Sujet : Sécurité des Applications Web - OWASP Top 10</h2>
         <p>
-          La <strong>veille technologique</strong> est un processus d'observation continue des évolutions, innovations et tendances technologiques pertinentes pour mon domaine.
-          Cette démarche m'aide à rester à jour sur les meilleures pratiques, les outils émergents et les risques de sécurité.
+          Ma veille technologique porte sur la <strong>sécurisation des applications web</strong>, en particulier les vulnérabilités répertoriées dans le <strong>OWASP Top 10</strong> et les bonnes pratiques de développement sécurisé.
         </p>
+        
+        <div class="pill-card" style="margin-top:1rem;">
+          <h3>Pourquoi ce sujet ?</h3>
+          <p>
+            Dans le cadre de mon projet professionnel orienté <strong>cybersécurité</strong>, il est essentiel de comprendre les failles de sécurité les plus courantes dans les applications web (injections SQL, XSS, CSRF, etc.) et les méthodes pour les prévenir.
+            Ce sujet est directement lié à mes projets, notamment <strong>RMS Ticket</strong> (gestion de tickets avec authentification et base de données) et <strong>Le Muscle Sympa</strong> (site web avec formulaires).
+          </p>
+          
+          <h4 style="margin-top:1rem;">Problématiques principales :</h4>
+          <ul class="list">
+            <li>Comment sécuriser les entrées utilisateur et prévenir les injections ?</li>
+            <li>Quelles sont les bonnes pratiques d'authentification et de gestion des sessions ?</li>
+            <li>Comment protéger les données sensibles (mots de passe, informations personnelles) ?</li>
+            <li>Quels outils et frameworks utiliser pour renforcer la sécurité ?</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="pill-card" style="margin-top:1rem;">
-        <h3>Domaines de suivi</h3>
-        <ul class="list">
-          <li><strong>Cybersécurité :</strong> Vulnérabilités, malwares, bonnes pratiques OWASP, authentification moderne.</li>
-          <li><strong>Développement Web :</strong> Frameworks (React, Vue, Next.js), standards HTTP/REST, performance.</li>
-          <li><strong>Architecture :</strong> Microservices, API design, patterns et clean code.</li>
-          <li><strong>DevOps & Infrastructure :</strong> Docker, Kubernetes, CI/CD, monitoring, cloud services.</li>
-          <li><strong>Bases de données :</strong> SQL & NoSQL, optimisation, sécurité des données.</li>
-        </ul>
-      </div>
-
-      <section style="margin-top:1.5rem;">
-        <h2>Sources et Outils de Veille</h2>
-        <p>Les informations sont collectées via différents canaux pour assurer une couverture complète et pertinente.</p>
-
+      <!-- METHODOLOGIE -->
+      <section style="margin-top:2rem;">
+        <h2>📊 Méthodologie de Veille</h2>
+        
         <div class="grid two" style="margin-top:1rem;">
-          <article class="card project">
-            <div class="card-body">
-              <h3 class="project-title">Plateformes & Blogs</h3>
-              <p class="project-meta">Ressources principales d'apprentissage</p>
-              <ul class="list">
-                <li><strong>DEV.to :</strong> Articles techniques et best practices de développeurs.</li>
-                <li><strong>Medium :</strong> Analyses approfondies sur architecture et sécurité.</li>
-                <li><strong>HackerNews :</strong> Actualités tech et sécurité critiques.</li>
-                <li><strong>OWASP Blog :</strong> Mise à jour des risques de sécurité web.</li>
-                <li><strong>Mozilla Security Blog :</strong> Études et avis de sécurité.</li>
-              </ul>
-            </div>
-          </article>
+          <div class="card">
+            <h3>Outils et Sources</h3>
+            <ul class="list">
+              <li><strong>Feedly :</strong> Agrégateur RSS pour suivre les blogs de sécurité</li>
+              <li><strong>Google Alerts :</strong> Notifications sur "OWASP", "web security", "PHP security"</li>
+              <li><strong>Reddit :</strong> r/netsec, r/webdev, r/php pour discussions communautaires</li>
+              <li><strong>Twitter/X :</strong> Suivi de @owasp, @troyhunt, experts en sécurité</li>
+              <li><strong>GitHub :</strong> Projets de sécurité et CVE (Common Vulnerabilities and Exposures)</li>
+            </ul>
+          </div>
 
-          <article class="card project">
-            <div class="card-body">
-              <h3 class="project-title">Newsletters & Réseaux</h3>
-              <p class="project-meta">Actualités régulières et discussions communautaires</p>
-              <ul class="list">
-                <li><strong>JavaScript Weekly :</strong> Tendances et bibliothèques JavaScript.</li>
-                <li><strong>Frontend Focus :</strong> Développement frontend et UX/UI.</li>
-                <li><strong>Reddit (r/webdev, r/cybersecurity) :</strong> Discussions communautaires.</li>
-                <li><strong>Twitter/X :</strong> Suivi d'experts en cybersécurité et développement.</li>
-                <li><strong>GitHub Trending :</strong> Projets et librairies populaires.</li>
-              </ul>
-            </div>
-          </article>
+          <div class="card">
+            <h3>Sources Principales</h3>
+            <ul class="list">
+              <li><strong>OWASP.org :</strong> Documentation officielle, Top 10, cheatsheets</li>
+              <li><strong>PortSwigger Blog :</strong> Articles sur les vulnérabilités web</li>
+              <li><strong>PHP.net Security :</strong> Bonnes pratiques PHP spécifiques</li>
+              <li><strong>ANSSI (FR) :</strong> Guides et recommandations de sécurité</li>
+              <li><strong>CVE Details :</strong> Suivi des vulnérabilités récentes</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pill-card" style="margin-top:1rem;">
+          <h4>Organisation et Fréquence</h4>
+          <ul class="list">
+            <li><strong>Quotidien :</strong> Consultation rapide de Feedly et Google Alerts (10-15 min)</li>
+            <li><strong>Hebdomadaire :</strong> Lecture approfondie de 2-3 articles + prise de notes</li>
+            <li><strong>Mensuel :</strong> Synthèse des apprentissages et mise à jour du portfolio</li>
+            <li><strong>Archivage :</strong> Bookmarks organisés par catégorie (Injections, Auth, XSS, etc.)</li>
+          </ul>
         </div>
       </section>
 
-      <section style="margin-top:1.5rem;">
-        <h2>Articles et Analyses Récents</h2>
-        <p>Synthèse des découvertes et apprentissages majeurs.</p>
+      <!-- ARTICLES ANALYSES -->
+      <section style="margin-top:2rem;">
+        <h2>📝 Articles et Ressources Analysés</h2>
+        <p>Synthèse chronologique des articles et découvertes majeures.</p>
 
-        <div style="margin-top:1rem;">
-          <div class="pill-card">
-            <h3>À compléter</h3>
-            <p>
-              Les articles et analyses seront ajoutés au fur et à mesure de la veille. 
-              Chaque entrée contiendra le sujet, la source, la date et un résumé des points clés.
+        <!-- Article 1 -->
+        <article class="card" style="margin-top:1rem;">
+          <div class="card-body">
+            <h3 class="project-title">OWASP Top 10 - 2021 Edition</h3>
+            <p class="project-meta">📅 Janvier 2026 • Source : <a href="https://owasp.org/Top10/" target="_blank" rel="noopener">OWASP.org</a></p>
+            <p><strong>Thème :</strong> Panorama des 10 vulnérabilités web les plus critiques</p>
+            <p class="project-desc">
+              L'OWASP Top 10 classe les risques de sécurité les plus fréquents dans les applications web. L'édition 2021 met en avant :
+              <strong>A01 (Broken Access Control)</strong> en première position, <strong>A03 (Injection)</strong> incluant SQL/NoSQL/LDAP,
+              et l'apparition de <strong>A08 (Software and Data Integrity Failures)</strong> lié aux dépendances non sécurisées.
             </p>
+            <p><strong>💡 Apprentissage clé :</strong> Nécessité de valider et filtrer <em>toutes</em> les entrées utilisateur, 
+            d'utiliser des requêtes préparées (PDO en PHP) et de limiter strictement les droits d'accès.</p>
+            <p><strong>🔗 Application :</strong> Implémenté dans RMS Ticket via PDO et contrôle d'accès par rôles (admin/user).</p>
+          </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="card" style="margin-top:1rem;">
+          <div class="card-body">
+            <h3 class="project-title">SQL Injection Prevention Cheat Sheet</h3>
+            <p class="project-meta">📅 Janvier 2026 • Source : <a href="https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html" target="_blank" rel="noopener">OWASP Cheat Sheet Series</a></p>
+            <p><strong>Thème :</strong> Techniques de prévention des injections SQL</p>
+            <p class="project-desc">
+              Guide complet sur la prévention des injections SQL : utilisation de <strong>requêtes préparées</strong> (Prepared Statements),
+              validation stricte des entrées, échappement approprié, et principe du moindre privilège pour les comptes BDD.
+              Exemples concrets en PHP/PDO, Java, Python et .NET.
+            </p>
+            <p><strong>💡 Apprentissage clé :</strong> Les requêtes préparées avec paramètres liés (bind) empêchent l'interprétation du code malveillant.
+            Ne jamais concaténer directement les variables utilisateur dans une requête SQL.</p>
+            <p><strong>🔗 Application :</strong> Refactoring du code de RMS Ticket pour utiliser exclusivement PDO avec bindParam().</p>
+          </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="card" style="margin-top:1rem;">
+          <div class="card-body">
+            <h3 class="project-title">Cross-Site Scripting (XSS) Explained</h3>
+            <p class="project-meta">📅 Janvier 2026 • Source : <a href="https://portswigger.net/web-security/cross-site-scripting" target="_blank" rel="noopener">PortSwigger Web Security Academy</a></p>
+            <p><strong>Thème :</strong> Comprendre et prévenir les attaques XSS (Reflected, Stored, DOM-based)</p>
+            <p class="project-desc">
+              Article détaillé sur les 3 types de XSS. Le <strong>Stored XSS</strong> (le plus dangereux) stocke le script malveillant en base de données
+              et l'exécute à chaque affichage. Le <strong>Reflected XSS</strong> passe par l'URL. Le <strong>DOM-based XSS</strong> exploite le JavaScript côté client.
+              Solutions : échappement HTML avec <code>htmlspecialchars()</code> en PHP, Content Security Policy (CSP), validation des entrées.
+            </p>
+            <p><strong>💡 Apprentissage clé :</strong> Toujours encoder les données affichées dans le HTML, surtout celles provenant d'utilisateurs ou de la BDD.</p>
+            <p><strong>🔗 Application :</strong> Ajout de htmlspecialchars() sur tous les echo de variables dans mes templates PHP.</p>
+          </div>
+        </article>
+
+        <!-- Article 4 -->
+        <article class="card" style="margin-top:1rem;">
+          <div class="card-body">
+            <h3 class="project-title">Password Storage Best Practices</h3>
+            <p class="project-meta">📅 Janvier 2026 • Source : <a href="https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html" target="_blank" rel="noopener">OWASP Cheat Sheet Series</a></p>
+            <p><strong>Thème :</strong> Stockage sécurisé des mots de passe</p>
+            <p class="project-desc">
+              Ne <strong>jamais</strong> stocker les mots de passe en clair ou avec MD5/SHA1. Utiliser des algorithmes de hachage adaptatifs comme
+              <strong>bcrypt</strong>, <strong>Argon2</strong> ou <strong>scrypt</strong>. En PHP : <code>password_hash()</code> et <code>password_verify()</code>.
+              Recommandations : coût de hachage élevé, salage automatique, politique de mots de passe forts (12+ caractères).
+            </p>
+            <p><strong>💡 Apprentissage clé :</strong> password_hash() utilise bcrypt par défaut avec un salt unique. Toujours vérifier avec password_verify() et ne jamais comparer directement les hashs.</p>
+            <p><strong>🔗 Application :</strong> Système d'authentification sécurisé implémenté dans RMS Ticket avec bcrypt.</p>
+          </div>
+        </article>
+
+        <!-- Article 5 -->
+        <article class="card" style="margin-top:1rem;">
+          <div class="card-body">
+            <h3 class="project-title">CSRF (Cross-Site Request Forgery) Protection</h3>
+            <p class="project-meta">📅 Janvier 2026 • Source : <a href="https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html" target="_blank" rel="noopener">OWASP Cheat Sheet Series</a></p>
+            <p><strong>Thème :</strong> Protection contre les attaques CSRF</p>
+            <p class="project-desc">
+              Le CSRF permet à un attaquant de faire exécuter des actions non autorisées à un utilisateur authentifié (modification de profil, transaction, etc.).
+              Solutions : <strong>tokens CSRF</strong> uniques par session/formulaire, vérification de l'origine (header Referer), attribut SameSite sur les cookies,
+              et re-authentification pour les actions sensibles.
+            </p>
+            <p><strong>💡 Apprentissage clé :</strong> Générer un token CSRF aléatoire en session, l'inclure dans chaque formulaire et le vérifier côté serveur avant traitement.</p>
+            <p><strong>🔗 Application :</strong> Ajout de tokens CSRF sur tous les formulaires de RMS Ticket (création/modification de tickets).</p>
+          </div>
+        </article>
+
+        <!-- Article 6 -->
+        <article class="card" style="margin-top:1rem;">
+          <div class="card-body">
+            <h3 class="project-title">Secure Headers Configuration</h3>
+            <p class="project-meta">📅 Janvier 2026 • Source : <a href="https://owasp.org/www-project-secure-headers/" target="_blank" rel="noopener">OWASP Secure Headers Project</a></p>
+            <p><strong>Thème :</strong> Sécurisation via les en-têtes HTTP</p>
+            <p class="project-desc">
+              Configuration des headers HTTP de sécurité : <strong>Content-Security-Policy</strong> (prévention XSS), 
+              <strong>X-Frame-Options</strong> (clickjacking), <strong>Strict-Transport-Security</strong> (HTTPS obligatoire),
+              <strong>X-Content-Type-Options</strong> (MIME sniffing), <strong>Referrer-Policy</strong>. Ces en-têtes renforcent la posture de sécurité côté navigateur.
+            </p>
+            <p><strong>💡 Apprentissage clé :</strong> Une simple configuration d'en-têtes peut bloquer de nombreuses attaques. À implémenter dans le .htaccess ou la config serveur.</p>
+            <p><strong>🔗 Application :</strong> Prévu pour la mise en production de RMS Ticket (config Apache/Nginx).</p>
+          </div>
+        </article>
+
+        <!-- Article 7 -->
+        <article class="card" style="margin-top:1rem;">
+          <div class="card-body">
+            <h3 class="project-title">PHP Security Best Practices</h3>
+            <p class="project-meta">📅 Janvier 2026 • Source : <a href="https://www.php.net/manual/fr/security.php" target="_blank" rel="noopener">PHP Manual - Security</a></p>
+            <p><strong>Thème :</strong> Sécurisation spécifique au langage PHP</p>
+            <p class="project-desc">
+              Guide officiel PHP : désactivation de <code>register_globals</code> et <code>magic_quotes</code> (obsolètes), gestion sécurisée des sessions,
+              validation/filtrage avec <code>filter_var()</code>, upload de fichiers sécurisé (vérification MIME, extensions, taille, stockage hors webroot),
+              configuration php.ini (display_errors OFF en prod, open_basedir, disable_functions).
+            </p>
+            <p><strong>💡 Apprentissage clé :</strong> PHP offre des fonctions natives de sécurité (filter_var, password_hash, htmlspecialchars) qu'il faut systématiquement utiliser.</p>
+            <p><strong>🔗 Application :</strong> Audit de sécurité du code PHP de mes projets (Le Muscle Sympa, RMS Ticket).</p>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- APPLICATION PRATIQUE -->
+      <section style="margin-top:2rem;">
+        <h2>🛠️ Application dans mes Projets</h2>
+        
+        <div class="grid two" style="margin-top:1rem;">
+          <div class="pill-card">
+            <h3>RMS Ticket</h3>
+            <p><strong>Améliorations de sécurité appliquées :</strong></p>
+            <ul class="list">
+              <li>✅ Requêtes préparées PDO (prévention injection SQL)</li>
+              <li>✅ Hachage bcrypt pour les mots de passe</li>
+              <li>✅ Tokens CSRF sur tous les formulaires</li>
+              <li>✅ Échappement HTML avec htmlspecialchars()</li>
+              <li>✅ Sessions sécurisées (httpOnly, secure, SameSite)</li>
+              <li>✅ Contrôle d'accès par rôles (RBAC)</li>
+            </ul>
+          </div>
+
+          <div class="pill-card">
+            <h3>Le Muscle Sympa</h3>
+            <p><strong>Bonnes pratiques implémentées :</strong></p>
+            <ul class="list">
+              <li>✅ Validation côté serveur des formulaires</li>
+              <li>✅ Filtrage avec filter_var() (emails, URLs)</li>
+              <li>✅ Protection contre spam (captcha/honeypot)</li>
+              <li>✅ Échappement des données affichées</li>
+              <li>✅ Limitation du taux de soumission</li>
+            </ul>
           </div>
         </div>
       </section>
 
-      <p style="margin-top:1rem; color:var(--muted);">
-        <em>Dernière mise à jour : 20 janvier 2026</em>
+      <!-- SYNTHESE -->
+      <section style="margin-top:2rem;">
+        <div class="card">
+          <h2>📌 Synthèse et Perspectives</h2>
+          <p>
+            Cette veille technologique sur la sécurité des applications web m'a permis de <strong>comprendre les vulnérabilités les plus courantes</strong>
+            et d'<strong>appliquer concrètement</strong> les bonnes pratiques dans mes projets.
+          </p>
+          <p>
+            L'approche OWASP Top 10 fournit un cadre structuré pour identifier et corriger les failles de sécurité.
+            L'intégration de ces connaissances dès la phase de conception permet de créer des applications plus robustes et fiables.
+          </p>
+          
+          <h4 style="margin-top:1rem;">Prochaines étapes :</h4>
+          <ul class="list">
+            <li>Approfondir l'authentification multi-facteurs (2FA/MFA)</li>
+            <li>Étudier les attaques par force brute et rate limiting</li>
+            <li>Explorer les outils d'audit de sécurité (OWASP ZAP, Burp Suite)</li>
+            <li>Se former à la sécurité des API REST (OAuth, JWT)</li>
+            <li>Suivre les CVE récentes affectant PHP et les frameworks utilisés</li>
+          </ul>
+        </div>
+      </section>
+
+      <p style="margin-top:2rem; color:var(--muted); text-align:center;">
+        <em>Dernière mise à jour : 2 février 2026</em>
       </p>
     </div>
   </main>
