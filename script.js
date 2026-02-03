@@ -38,7 +38,10 @@ const PROJECTS = [
     periode: "2025-2026",
     desc: "Site web de réservation pour une maison de vacances, conçu pour un usage personnel.",
     tags: ["Perso", "HTML", "CSS", "JavaScript", "Front-end"],
-    liens: [{ label: "GitHub", url: "https://github.com/Romain-SNVY78/Maison_Kerlouan" }]
+    liens: [
+      { label: "Voir le site", url: "http://typierrot.testoxylog.fr/" },
+      { label: "GitHub", url: "https://github.com/Romain-SNVY78/Maison_Kerlouan" }
+    ]
   }
 ];
 
