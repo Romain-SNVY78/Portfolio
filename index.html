@@ -1,5 +1,5 @@
 <!DOCTYPE html> 
-<html lang="fr">
+<html lang="fr" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -34,7 +34,22 @@
 
       </nav>
       <div class="actions">
-        <button id="themeToggle" class="btn ghost" aria-pressed="false" aria-label="Basculer le thème">🌓</button>
+        <button id="themeToggle" class="theme-toggle" aria-pressed="false" aria-label="Basculer le thème" title="Changer le thème">
+          <svg class="theme-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle class="sun" cx="12" cy="12" r="5"/>
+            <g class="sun-rays">
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </g>
+            <path class="moon" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
         <button id="printBtn" class="btn">Voir CV</button>
       </div>
     </div>
@@ -176,7 +191,7 @@
     <!-- SECTION E5 -->
 <section id="e5" class="section">
   <div class="container">
-    <h2>Épreuve E5 — Conception et Développement</h2>
+    <h2>Épreuve E5 — Conception et Développement    document.documentElement.classList.add('light-theme')</h2>
 
     <div class="card" style="margin-top: 1.5rem;">
       <h3>Présentation</h3>

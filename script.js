@@ -187,6 +187,34 @@ function bindPrint() {
   $("#printBtn")?.addEventListener("click", () => window.open('documents/CV_Romain_SANJIVY.pdf', '_blank'));
 }
 
+/* ====== THEME TOGGLE ====== */
+function bindThemeToggle() {
+  const toggle = document.querySelector("#themeToggle");
+  
+  if (!toggle) {
+    console.error("Bouton themeToggle non trouvé!");
+    return;
+  }
+
+  // Initialiser en mode dark
+  document.documentElement.classList.remove("light-theme");
+  document.documentElement.setAttribute("data-theme", "dark");
+  toggle.setAttribute("aria-pressed", "false");
+
+  // Gestionnaire de clic - toggle simple
+  toggle.addEventListener("click", () => {
+    const html = document.documentElement;
+    const isLight = html.classList.toggle("light-theme");
+    
+    const themeName = isLight ? "light" : "dark";
+    html.setAttribute("data-theme", themeName);
+    toggle.setAttribute("aria-pressed", isLight ? "true" : "false");
+    localStorage.setItem("theme", themeName);
+    
+    console.log("Thème changé:", themeName, "- Classe présente:", html.classList.contains("light-theme"));
+  });
+}
+
 /* ====== INIT ====== */
 document.addEventListener("DOMContentLoaded", () => {
   renderHero();
@@ -194,4 +222,5 @@ document.addEventListener("DOMContentLoaded", () => {
   bindFilters();
   bindNav();
   bindPrint();
+  bindThemeToggle();
 });

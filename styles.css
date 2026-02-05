@@ -1,7 +1,6 @@
 /* ===== Thèmes (variables CSS) ===== */
 /* Thème sombre (par défaut) */
-:root,
-html[data-theme="dark"] {
+html {
   --bg: #0b0d12;
   --bg-alt: #11141b;
   --text: #eef1f6;
@@ -14,43 +13,110 @@ html[data-theme="dark"] {
   --shadow: 0 8px 30px rgba(0,0,0,.35);
 }
 
-/* Thème clair moderne */
-html[data-theme="light"] {
-  --bg: #f9fafb;          /* Fond global gris très clair */
-  --bg-alt: #ffffff;      /* Fond secondaire (cartes, sections) blanc */
-  --text: #1f2937;        /* Texte anthracite */
-  --muted: #6b7280;       /* Texte secondaire gris moyen */
-  --card: #ffffff;        /* Cartes en blanc */
-  --primary: #4f46e5;     /* Violet moderne pour boutons et liens */
-  --accent: #22c55e;      /* Vert clair pour les accents positifs */
-  --danger: #ef4444;      /* Rouge doux */
-  --border: #e5e7eb;      /* Bordures gris clair */
-  --shadow: 0 4px 12px rgba(0,0,0,.08); /* Ombres discrètes */
+/* Thème clair */
+html.light-theme {
+  --bg: #f9fafb;
+  --bg-alt: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --card: #ffffff;
+  --primary: #4f46e5;
+  --accent: #22c55e;
+  --danger: #ef4444;
+  --border: #e5e7eb;
+  --shadow: 0 4px 12px rgba(0,0,0,.08);
 }
 
-
-
-html[data-theme="dark"] {
-  --bg: #0b0d12;
-  --bg-alt: #11141b;
-  --text: #eef1f6;
-  --muted:#aab1bd;
-  --card:#151a23;
-  --primary:#4da3ff;
-  --accent:#7bda78;
-  --danger:#ff6b6b;
-  --border:#242b36;
-  --shadow: 0 8px 30px rgba(0,0,0,.35);
+/* Bouton de thème moderne */
+.theme-toggle {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
+.theme-toggle:hover {
+  border-color: var(--primary);
+  background: var(--bg-alt);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(77, 163, 255, 0.2);
+}
 
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+.theme-icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Icône soleil */
+.theme-icon .sun {
+  fill: var(--primary);
+  transform-origin: center;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-icon .sun-rays {
+  stroke: var(--primary);
+  stroke-width: 2;
+  stroke-linecap: round;
+  transform-origin: center;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+
+/* Icône lune */
+.theme-icon .moon {
+  fill: var(--primary);
+  opacity: 0;
+  transform: translateX(-8px) scale(0.5);
+  transition: opacity 0.3s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* État thème clair (afficher la lune) */
+html[data-theme="light"] .theme-icon .sun {
+  transform: scale(0.5) rotate(90deg);
+  opacity: 0;
+}
+
+html[data-theme="light"] .theme-icon .sun-rays {
+  transform: rotate(90deg) scale(0.5);
+  opacity: 0;
+}
+
+html[data-theme="light"] .theme-icon .moon {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+/* Animation au survol */
+.theme-toggle:hover .theme-icon .sun {
+  transform: rotate(180deg);
+}
+
+html[data-theme="light"] .theme-toggle:hover .theme-icon .moon {
+  transform: translateX(0) scale(1.1) rotate(-15deg);
+}
 
 /* Base */
 *{box-sizing:border-box}
 html,body{padding:0;margin:0}
 body{
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-  background:var(--bg); color:var(--text); line-height:1.6;
+  background:var(--bg); 
+  color:var(--text); 
+  line-height:1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 a{color:var(--primary); text-decoration:none}
 a:hover{text-decoration:underline}
