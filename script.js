@@ -17,7 +17,9 @@ const PROJECTS = [
     periode: "2025-2026",
     desc: "Application web de gestion de tickets développée en équipe.",
     tags: ["Groupe", "Web", "PHP", "MySQL", "Back-end"],
-    liens: [{ label: "GitHub", url: "#" }]
+    liens: [
+      { label: "Voir le site", url: "#" },
+      { label: "GitHub", url: "https://github.com/Sasukisse/RMS-Ticket" }]
   },
   {
     id: "p5",
