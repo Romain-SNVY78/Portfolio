@@ -18,7 +18,7 @@ const PROJECTS = [
     desc: "Application web de gestion de tickets développée en équipe.",
     tags: ["Groupe", "Web", "PHP", "MySQL", "Back-end"],
     liens: [
-      { label: "Voir le site", url: "#" },
+      { label: "Voir le site", url: "https://rms.testoxylog.fr/HomePage/index.php" },
       { label: "GitHub", url: "https://github.com/Sasukisse/RMS-Ticket" }]
   },
   {
