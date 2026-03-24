@@ -142,7 +142,7 @@ ul{padding-left:1rem}
 .pill-card{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:16px; box-shadow:var(--shadow)}
 .grid{display:grid; gap:18px}
 .grid.two{grid-template-columns:1fr; }
-.grid.three{grid-template-columns:1fr; }
+.grid.three{grid-template-columns:1fr; align-items:stretch}
 @media (min-width:840px){ .grid.two{grid-template-columns:1.1fr .9fr} .grid.three{grid-template-columns:repeat(3,1fr)} }
 
 /* Header */
@@ -189,10 +189,12 @@ ul{padding-left:1rem}
 .svg-line{fill:color-mix(in oklab, var(--primary) 22%, white 78%)}
 
 /* Projects */
+.project{display:flex; flex-direction:column}
+.project .card-body{display:flex; flex-direction:column; flex:1; height:100%}
 .project .project-title{margin:0 0 4px}
 .project .project-meta{color:var(--muted); margin-bottom:8px}
 .project .project-tags{margin:8px 0 0}
-.project .project-links{margin-top:10px; display:flex; flex-wrap:wrap; gap:8px}
+.project .project-links{margin-top:auto; padding-top:12px; display:flex; flex-wrap:wrap; gap:8px}
 .project .project-links a{border:1px solid var(--border); padding:6px 10px; border-radius:8px}
 
 /* Competence Matrix */
