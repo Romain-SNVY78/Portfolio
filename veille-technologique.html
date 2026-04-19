@@ -55,183 +55,96 @@
 
       <!-- SUJET DE VEILLE -->
       <div class="card" style="margin-top:1.5rem;">
-        <h2>🔐 Sujet : Sécurité des applications web - OWASP Top 10</h2>
+        <h2>🔐 Sujet : Sécurité des applications web</h2>
         <p>
-          Ma veille technologique porte sur la <strong>sécurisation des applications web</strong>, en particulier les vulnérabilités répertoriées dans le <strong>OWASP Top 10</strong> et les bonnes pratiques de développement sécurisé.
+          Ma veille technologique porte sur la <strong>sécurisation des applications web</strong>, notamment comment protéger les données des utilisateurs et éviter les failles les plus courantes recensées par l'<strong>OWASP</strong> (Open Web Application Security Project).
         </p>
-        
+
         <div class="pill-card" style="margin-top:1rem;">
           <h3>Pourquoi ce sujet ?</h3>
           <p>
-            Dans le cadre de mon projet professionnel orienté <strong>cybersécurité</strong>, il est essentiel de comprendre les failles de sécurité les plus courantes dans les applications web (injections SQL, XSS, CSRF, etc.) et les méthodes pour les prévenir.
-            Ce sujet est directement lié à mes projets, notamment <strong>RMS Ticket</strong> (gestion de tickets avec authentification et base de données) et <strong>Le Muscle Sympa</strong> (site web avec formulaires).
+            J'ai choisi ce sujet car après mon BTS SIO, je souhaite poursuivre mes études dans le domaine de la <strong>cybersécurité</strong>. En développant mes projets PHP (<strong>RMS Ticket</strong>, <strong>Le Muscle Sympa</strong>), je me suis rendu compte que les failles les plus courantes (injections SQL, XSS, mots de passe mal stockés) s'appliquaient directement à mon code. Cette veille m'a permis de comprendre ces risques et d'y répondre concrètement.
           </p>
-          
-          <h4 style="margin-top:1rem;">Problématiques principales :</h4>
+          <h4 style="margin-top:1rem;">Questions que je me suis posées :</h4>
           <ul class="list">
-            <li>Comment sécuriser les entrées utilisateur et prévenir les injections ?</li>
-            <li>Quelles sont les bonnes pratiques d'authentification et de gestion des sessions ?</li>
-            <li>Comment protéger les données sensibles (mots de passe, informations personnelles) ?</li>
-            <li>Quels outils et frameworks utiliser pour renforcer la sécurité ?</li>
+            <li>Comment empêcher un utilisateur malveillant de manipuler mes requêtes SQL ?</li>
+            <li>Comment bien stocker les mots de passe en base de données ?</li>
+            <li>Comment éviter qu'un script JavaScript malveillant s'exécute sur mon site ?</li>
           </ul>
         </div>
       </div>
 
       <!-- METHODOLOGIE -->
       <section style="margin-top:2rem;">
-        <h2>📊 Méthodologie de veille</h2>
-        
-        <div class="grid two" style="margin-top:1rem;">
-          <div class="card">
-            <h3>Outils et sources</h3>
-            <ul class="list">
-              <li><strong>Feedly :</strong> Agrégateur RSS pour suivre les blogs de sécurité</li>
-              <li><strong>Google Alerts :</strong> Notifications sur "OWASP", "web security", "PHP security"</li>
-              <li><strong>Reddit :</strong> r/netsec, r/webdev, r/php pour discussions communautaires</li>
-              <li><strong>Twitter/X :</strong> Suivi de @owasp, @troyhunt, experts en sécurité</li>
-              <li><strong>GitHub :</strong> Projets de sécurité et CVE (Common Vulnerabilities and Exposures)</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>Sources principales</h3>
-            <ul class="list">
-              <li><strong>OWASP.org :</strong> Documentation officielle, Top 10, cheatsheets</li>
-              <li><strong>PortSwigger Blog :</strong> Articles sur les vulnérabilités web</li>
-              <li><strong>PHP.net Security :</strong> Bonnes pratiques PHP spécifiques</li>
-              <li><strong>ANSSI (FR) :</strong> Guides et recommandations de sécurité</li>
-              <li><strong>CVE Details :</strong> Suivi des vulnérabilités récentes</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="pill-card" style="margin-top:1rem;">
-          <h4>Organisation et Fréquence</h4>
+        <h2>📊 Comment j'ai effectué ma veille</h2>
+        <div class="card">
           <ul class="list">
-            <li><strong>Quotidien :</strong> Consultation rapide de Feedly et Google Alerts (10-15 min)</li>
-            <li><strong>Hebdomadaire :</strong> Lecture approfondie de 2-3 articles + prise de notes</li>
-            <li><strong>Mensuel :</strong> Synthèse des apprentissages et mise à jour du portfolio</li>
-            <li><strong>Archivage :</strong> Bookmarks organisés par catégorie (Injections, Auth, XSS, etc.)</li>
+            <li><strong>OWASP.org :</strong> Site de référence mondial sur la sécurité web, avec des fiches pratiques claires</li>
+            <li><strong>PHP.net :</strong> Documentation officielle PHP, consultée pour vérifier l'utilisation correcte des fonctions de sécurité</li>
+            <li><strong>Google Alerts :</strong> Alertes sur "injection SQL PHP" et "sécurité PHP" pour suivre les actualités</li>
           </ul>
         </div>
       </section>
 
       <!-- ARTICLES ANALYSES -->
       <section style="margin-top:2rem;">
-        <h2>📝 Articles et ressources analysés</h2>
-        <p>Synthèse chronologique des articles et découvertes majeures.</p>
+        <h2>📝 Ce que j'ai appris</h2>
 
-        <!-- Article 1 -->
+        <!-- Article 1 : SQL Injection -->
         <article class="card" style="margin-top:1rem;">
           <div class="card-body">
-            <h3 class="project-title">OWASP Top 10 - 2021 Edition</h3>
-            <p class="project-meta">📅 Janvier 2026 • Source : <a href="https://owasp.org/Top10/" target="_blank" rel="noopener">OWASP.org</a></p>
-            <p><strong>Thème :</strong> Panorama des 10 vulnérabilités web les plus critiques</p>
-            <p class="project-desc">
-              L'OWASP Top 10 classe les risques de sécurité les plus fréquents dans les applications web. L'édition 2021 met en avant :
-              <strong>A01 (Broken Access Control)</strong> en première position, <strong>A03 (Injection)</strong> incluant SQL/NoSQL/LDAP,
-              et l'apparition de <strong>A08 (Software and Data Integrity Failures)</strong> lié aux dépendances non sécurisées.
-            </p>
-            <p><strong>💡 Apprentissage clé :</strong> Nécessité de valider et filtrer <em>toutes</em> les entrées utilisateur, 
-            d'utiliser des requêtes préparées (PDO en PHP) et de limiter strictement les droits d'accès.</p>
-            <p><strong>🔗 Application :</strong> Implémenté dans RMS Ticket via PDO et contrôle d'accès par rôles (admin/user).</p>
+            <h3 class="project-title">Faille n°1 — L'injection SQL</h3>
+            <p class="project-meta">📅 Janvier 2026 • Source : <a href="https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html" target="_blank" rel="noopener">OWASP Cheat Sheet</a> &amp; <a href="https://www.php.net/manual/fr/pdo.prepare.php" target="_blank" rel="noopener">PHP.net</a></p>
+            <p><strong>C'est quoi ?</strong> Un attaquant tape du code SQL directement dans un champ de formulaire pour manipuler la base de données. Par exemple, taper <code>' OR '1'='1</code> dans un champ de connexion peut donner accès à tous les comptes.</p>
+            <p style="margin-top:0.75rem;"><strong>Comment j'évite ça ?</strong> En utilisant les <strong>requêtes préparées (PDO)</strong> en PHP. Au lieu de coller directement la variable dans la requête :</p>
+            <pre style="background:var(--surface2,#1e1e2e);padding:0.75rem 1rem;border-radius:8px;overflow-x:auto;font-size:0.85rem;margin-top:0.5rem;"><code><span style="color:#f38ba8;">// ❌ Dangereux</span>
+$sql = "SELECT * FROM users WHERE email = '" . $_POST['email'] . "'";
+
+<span style="color:#a6e3a1;">// ✅ Sécurisé avec PDO</span>
+$stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email");
+$stmt->execute([':email' => $_POST['email']]);</code></pre>
+            <p style="margin-top:0.75rem;"><strong>💡 Pourquoi ça marche ?</strong> PDO sépare le code SQL des données : la valeur saisie est traitée comme une simple chaîne de caractères, jamais comme du code.</p>
+            <p><strong>🔗 Appliqué dans :</strong> RMS Ticket — toutes mes requêtes utilisent PDO avec des paramètres liés. Le Muscle Sympa — les formulaires de contact et d'inscription utilisent également PDO pour interroger la base de données.</p>
           </div>
         </article>
 
-        <!-- Article 2 -->
+        <!-- Article 2 : XSS -->
         <article class="card" style="margin-top:1rem;">
           <div class="card-body">
-            <h3 class="project-title">SQL Injection Prevention Cheat Sheet</h3>
-            <p class="project-meta">📅 Janvier 2026 • Source : <a href="https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html" target="_blank" rel="noopener">OWASP Cheat Sheet Series</a></p>
-            <p><strong>Thème :</strong> Techniques de prévention des injections SQL</p>
-            <p class="project-desc">
-              Guide complet sur la prévention des injections SQL : utilisation de <strong>requêtes préparées</strong> (Prepared Statements),
-              validation stricte des entrées, échappement approprié, et principe du moindre privilège pour les comptes BDD.
-              Exemples concrets en PHP/PDO, Java, Python et .NET.
-            </p>
-            <p><strong>💡 Apprentissage clé :</strong> Les requêtes préparées avec paramètres liés (bind) empêchent l'interprétation du code malveillant.
-            Ne jamais concaténer directement les variables utilisateur dans une requête SQL.</p>
-            <p><strong>🔗 Application :</strong> Refactoring du code de RMS Ticket pour utiliser exclusivement PDO avec bindParam().</p>
+            <h3 class="project-title">Faille n°2 — Le XSS (Cross-Site Scripting)</h3>
+            <p class="project-meta">📅 Février 2026 • Source : <a href="https://owasp.org/www-community/attacks/xss/" target="_blank" rel="noopener">OWASP</a></p>
+            <p><strong>C'est quoi ?</strong> Si un utilisateur saisit <code>&lt;script&gt;alert('piraté')&lt;/script&gt;</code> dans un formulaire (ex : commentaire, nom…) et que je l'affiche sans protection, ce script s'exécute dans le navigateur de tous les visiteurs.</p>
+            <p style="margin-top:0.75rem;"><strong>Comment j'évite ça ?</strong> Avec la fonction PHP <code>htmlspecialchars()</code> qui transforme les balises HTML en texte inoffensif avant l'affichage :</p>
+            <pre style="background:var(--surface2,#1e1e2e);padding:0.75rem 1rem;border-radius:8px;overflow-x:auto;font-size:0.85rem;margin-top:0.5rem;"><code><span style="color:#f38ba8;">// ❌ Dangereux : affiche le script tel quel</span>
+echo $_GET['nom'];
+
+<span style="color:#a6e3a1;">// ✅ Sécurisé : &lt;script&gt; devient du texte affiché, pas exécuté</span>
+echo htmlspecialchars($_GET['nom'], ENT_QUOTES, 'UTF-8');</code></pre>
+            <p style="margin-top:0.75rem;"><strong>💡 Résultat :</strong> Le <code>&lt;script&gt;</code> malveillant apparaît comme du texte à l'écran au lieu de s'exécuter.</p>
+            <p><strong>🔗 Appliqué dans :</strong> RMS Ticket — tous les affichages de données provenant de la base de données passent par <code>htmlspecialchars()</code>. Le Muscle Sympa — les noms et messages saisis dans les formulaires sont échappés avant affichage.</p>
           </div>
         </article>
 
-        <!-- Article 3 -->
+        <!-- Article 3 : Mots de passe -->
         <article class="card" style="margin-top:1rem;">
           <div class="card-body">
-            <h3 class="project-title">Cross-Site Scripting (XSS) Explained</h3>
-            <p class="project-meta">📅 Janvier 2026 • Source : <a href="https://portswigger.net/web-security/cross-site-scripting" target="_blank" rel="noopener">PortSwigger Web Security Academy</a></p>
-            <p><strong>Thème :</strong> Comprendre et prévenir les attaques XSS (Reflected, Stored, DOM-based)</p>
-            <p class="project-desc">
-              Article détaillé sur les 3 types de XSS. Le <strong>Stored XSS</strong> (le plus dangereux) stocke le script malveillant en base de données
-              et l'exécute à chaque affichage. Le <strong>Reflected XSS</strong> passe par l'URL. Le <strong>DOM-based XSS</strong> exploite le JavaScript côté client.
-              Solutions : échappement HTML avec <code>htmlspecialchars()</code> en PHP, Content Security Policy (CSP), validation des entrées.
-            </p>
-            <p><strong>💡 Apprentissage clé :</strong> Toujours encoder les données affichées dans le HTML, surtout celles provenant d'utilisateurs ou de la BDD.</p>
-            <p><strong>🔗 Application :</strong> Ajout de htmlspecialchars() sur tous les echo de variables dans mes templates PHP.</p>
-          </div>
-        </article>
+            <h3 class="project-title">Faille n°3 — Stockage des mots de passe</h3>
+            <p class="project-meta">📅 Février 2026 • Source : <a href="https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html" target="_blank" rel="noopener">OWASP Cheat Sheet</a></p>
+            <p><strong>C'est quoi le problème ?</strong> Si la base de données est compromise et que les mots de passe sont stockés en clair (ou en MD5), l'attaquant les a immédiatement. Il faut les <strong>hacher</strong>, c'est-à-dire les transformer en une empreinte impossible à retrouver.</p>
+            <p style="margin-top:0.75rem;"><strong>Comment je le fais ?</strong> Avec les fonctions natives PHP <code>password_hash()</code> et <code>password_verify()</code> :</p>
+            <pre style="background:var(--surface2,#1e1e2e);padding:0.75rem 1rem;border-radius:8px;overflow-x:auto;font-size:0.85rem;margin-top:0.5rem;"><code><span style="color:#f38ba8;">// ❌ Dangereux : mot de passe en clair ou MD5</span>
+$mdp = $_POST['password'];  // stocké tel quel
 
-        <!-- Article 4 -->
-        <article class="card" style="margin-top:1rem;">
-          <div class="card-body">
-            <h3 class="project-title">Password Storage Best Practices</h3>
-            <p class="project-meta">📅 Janvier 2026 • Source : <a href="https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html" target="_blank" rel="noopener">OWASP Cheat Sheet Series</a></p>
-            <p><strong>Thème :</strong> Stockage sécurisé des mots de passe</p>
-            <p class="project-desc">
-              Ne <strong>jamais</strong> stocker les mots de passe en clair ou avec MD5/SHA1. Utiliser des algorithmes de hachage adaptatifs comme
-              <strong>bcrypt</strong>, <strong>Argon2</strong> ou <strong>scrypt</strong>. En PHP : <code>password_hash()</code> et <code>password_verify()</code>.
-              Recommandations : coût de hachage élevé, salage automatique, politique de mots de passe forts (12+ caractères).
-            </p>
-            <p><strong>💡 Apprentissage clé :</strong> password_hash() utilise bcrypt par défaut avec un salt unique. Toujours vérifier avec password_verify() et ne jamais comparer directement les hashs.</p>
-            <p><strong>🔗 Application :</strong> Système d'authentification sécurisé implémenté dans RMS Ticket avec bcrypt.</p>
-          </div>
-        </article>
+<span style="color:#a6e3a1;">// ✅ Sécurisé : hachage avec bcrypt</span>
+$hash = password_hash($_POST['password'], PASSWORD_BCRYPT);
+// Stocke $hash en BDD (ex: $2y$10$abc123...)
 
-        <!-- Article 5 -->
-        <article class="card" style="margin-top:1rem;">
-          <div class="card-body">
-            <h3 class="project-title">CSRF (Cross-Site Request Forgery) Protection</h3>
-            <p class="project-meta">📅 Janvier 2026 • Source : <a href="https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html" target="_blank" rel="noopener">OWASP Cheat Sheet Series</a></p>
-            <p><strong>Thème :</strong> Protection contre les attaques CSRF</p>
-            <p class="project-desc">
-              Le CSRF permet à un attaquant de faire exécuter des actions non autorisées à un utilisateur authentifié (modification de profil, transaction, etc.).
-              Solutions : <strong>tokens CSRF</strong> uniques par session/formulaire, vérification de l'origine (header Referer), attribut SameSite sur les cookies,
-              et re-authentification pour les actions sensibles.
-            </p>
-            <p><strong>💡 Apprentissage clé :</strong> Générer un token CSRF aléatoire en session, l'inclure dans chaque formulaire et le vérifier côté serveur avant traitement.</p>
-            <p><strong>🔗 Application :</strong> Ajout de tokens CSRF sur tous les formulaires de RMS Ticket (création/modification de tickets).</p>
-          </div>
-        </article>
-
-        <!-- Article 6 -->
-        <article class="card" style="margin-top:1rem;">
-          <div class="card-body">
-            <h3 class="project-title">Secure Headers Configuration</h3>
-            <p class="project-meta">📅 Janvier 2026 • Source : <a href="https://owasp.org/www-project-secure-headers/" target="_blank" rel="noopener">OWASP Secure Headers Project</a></p>
-            <p><strong>Thème :</strong> Sécurisation via les en-têtes HTTP</p>
-            <p class="project-desc">
-              Configuration des headers HTTP de sécurité : <strong>Content-Security-Policy</strong> (prévention XSS), 
-              <strong>X-Frame-Options</strong> (clickjacking), <strong>Strict-Transport-Security</strong> (HTTPS obligatoire),
-              <strong>X-Content-Type-Options</strong> (MIME sniffing), <strong>Referrer-Policy</strong>. Ces en-têtes renforcent la posture de sécurité côté navigateur.
-            </p>
-            <p><strong>💡 Apprentissage clé :</strong> Une simple configuration d'en-têtes peut bloquer de nombreuses attaques. À implémenter dans le .htaccess ou la config serveur.</p>
-            <p><strong>🔗 Application :</strong> Prévu pour la mise en production de RMS Ticket (config Apache/Nginx).</p>
-          </div>
-        </article>
-
-        <!-- Article 7 -->
-        <article class="card" style="margin-top:1rem;">
-          <div class="card-body">
-            <h3 class="project-title">PHP Security Best Practices</h3>
-            <p class="project-meta">📅 Janvier 2026 • Source : <a href="https://www.php.net/manual/fr/security.php" target="_blank" rel="noopener">PHP Manual - Security</a></p>
-            <p><strong>Thème :</strong> Sécurisation spécifique au langage PHP</p>
-            <p class="project-desc">
-              Guide officiel PHP : désactivation de <code>register_globals</code> et <code>magic_quotes</code> (obsolètes), gestion sécurisée des sessions,
-              validation/filtrage avec <code>filter_var()</code>, upload de fichiers sécurisé (vérification MIME, extensions, taille, stockage hors webroot),
-              configuration php.ini (display_errors OFF en prod, open_basedir, disable_functions).
-            </p>
-            <p><strong>💡 Apprentissage clé :</strong> PHP offre des fonctions natives de sécurité (filter_var, password_hash, htmlspecialchars) qu'il faut systématiquement utiliser.</p>
-            <p><strong>🔗 Application :</strong> Audit de sécurité du code PHP de mes projets (Le Muscle Sympa, RMS Ticket).</p>
+// Lors de la connexion :
+if (password_verify($_POST['password'], $hash)) {
+    // Connexion autorisée
+}</code></pre>
+            <p style="margin-top:0.75rem;"><strong>💡 Pourquoi pas MD5 ?</strong> MD5 est trop rapide et il existe des tables de correspondance (rainbow tables) qui permettent de retrouver le mot de passe original. <code>password_hash()</code> utilise bcrypt qui est volontairement lent et ajoute un "sel" aléatoire automatiquement.</p>
+            <p><strong>🔗 Appliqué dans :</strong> RMS Ticket — les mots de passe sont hachés avec <code>PASSWORD_BCRYPT</code> à l'inscription. Le Muscle Sympa — même fonctionnement pour les comptes utilisateurs du site.</p>
           </div>
         </article>
 
@@ -240,7 +153,7 @@
       <!-- APPLICATION PRATIQUE -->
       <section style="margin-top:2rem;">
         <h2>🛠️ Application dans mes Projets</h2>
-        
+
         <div class="grid two" style="margin-top:1rem;">
           <div class="pill-card">
             <h3>RMS Ticket</h3>
@@ -248,10 +161,9 @@
             <ul class="list">
               <li>✅ Requêtes préparées PDO (prévention injection SQL)</li>
               <li>✅ Hachage bcrypt pour les mots de passe</li>
-              <li>✅ Tokens CSRF sur tous les formulaires</li>
               <li>✅ Échappement HTML avec htmlspecialchars()</li>
-              <li>✅ Sessions sécurisées (httpOnly, secure, SameSite)</li>
-              <li>✅ Contrôle d'accès par rôles (RBAC)</li>
+              <li>✅ Sessions sécurisées (httpOnly, SameSite)</li>
+              <li>✅ Contrôle d'accès par rôles (admin/user)</li>
             </ul>
           </div>
 
@@ -259,11 +171,11 @@
             <h3>Le Muscle Sympa</h3>
             <p><strong>Bonnes pratiques implémentées :</strong></p>
             <ul class="list">
+              <li>✅ Requêtes préparées PDO</li>
+              <li>✅ Hachage bcrypt pour les mots de passe</li>
               <li>✅ Validation côté serveur des formulaires</li>
               <li>✅ Filtrage avec filter_var() (emails, URLs)</li>
-              <li>✅ Protection contre spam (captcha/honeypot)</li>
               <li>✅ Échappement des données affichées</li>
-              <li>✅ Limitation du taux de soumission</li>
             </ul>
           </div>
         </div>
@@ -272,29 +184,18 @@
       <!-- SYNTHESE -->
       <section style="margin-top:2rem;">
         <div class="card">
-          <h2>📌 Synthèse et Perspectives</h2>
+          <h2>📌 Ce que j'ai retenu</h2>
           <p>
-            Cette veille technologique sur la sécurité des applications web m'a permis de <strong>comprendre les vulnérabilités les plus courantes</strong>
-            et d'<strong>appliquer concrètement</strong> les bonnes pratiques dans mes projets.
+            Ces trois points m'ont appris que la sécurité web ne nécessite pas forcément des outils complexes : PHP fournit des fonctions natives (<code>PDO</code>, <code>htmlspecialchars()</code>, <code>password_hash()</code>) qui, si on les utilise systématiquement, protègent contre la majorité des attaques courantes.
           </p>
-          <p>
-            L'approche OWASP Top 10 fournit un cadre structuré pour identifier et corriger les failles de sécurité.
-            L'intégration de ces connaissances dès la phase de conception permet de créer des applications plus robustes et fiables.
+          <p style="margin-top:0.75rem;">
+            Le point commun de ces trois failles : elles viennent toutes de données <strong>saisies par l'utilisateur que l'on fait confiance à tort</strong>. La règle d'or est donc : <strong>ne jamais faire confiance à une entrée utilisateur</strong>.
           </p>
-          
-          <h4 style="margin-top:1rem;">Prochaines étapes :</h4>
-          <ul class="list">
-            <li>Approfondir l'authentification multi-facteurs (2FA/MFA)</li>
-            <li>Étudier les attaques par force brute et rate limiting</li>
-            <li>Explorer les outils d'audit de sécurité (OWASP ZAP, Burp Suite)</li>
-            <li>Se former à la sécurité des API REST (OAuth, JWT)</li>
-            <li>Suivre les CVE récentes affectant PHP et les frameworks utilisés</li>
-          </ul>
         </div>
       </section>
 
       <p style="margin-top:2rem; color:var(--muted); text-align:center;">
-        <em>Dernière mise à jour : 2 février 2026</em>
+        <em>Dernière mise à jour : avril 2026</em>
       </p>
     </div>
   </main>
