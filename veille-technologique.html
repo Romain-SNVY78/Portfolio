@@ -97,12 +97,12 @@
             <p class="project-meta">📅 Janvier 2026 • Source : <a href="https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html" target="_blank" rel="noopener">OWASP Cheat Sheet</a> &amp; <a href="https://www.php.net/manual/fr/pdo.prepare.php" target="_blank" rel="noopener">PHP.net</a></p>
             <p><strong>C'est quoi ?</strong> Un attaquant tape du code SQL directement dans un champ de formulaire pour manipuler la base de données. Par exemple, taper <code>' OR '1'='1</code> dans un champ de connexion peut donner accès à tous les comptes.</p>
             <p style="margin-top:0.75rem;"><strong>Comment j'évite ça ?</strong> En utilisant les <strong>requêtes préparées (PDO)</strong> en PHP. Au lieu de coller directement la variable dans la requête :</p>
-            <pre style="background:var(--surface2,#1e1e2e);padding:0.75rem 1rem;border-radius:8px;overflow-x:auto;font-size:0.85rem;margin-top:0.5rem;"><code><span style="color:#f38ba8;">// ❌ Dangereux</span>
-$sql = "SELECT * FROM users WHERE email = '" . $_POST['email'] . "'";
+            <pre style="background:var(--surface2,#1e1e2e);padding:0.75rem 1rem;border-radius:8px;overflow-x:auto;font-size:0.85rem;margin-top:0.5rem;color:#abb2bf;"><code><span style="color:#f38ba8;">// ❌ Dangereux</span>
+<span style="color:#9cdcfe;">$sql</span> = <span style="color:#ce9178;">"SELECT * FROM users WHERE email = '"</span> . <span style="color:#9cdcfe;">$_POST</span>[<span style="color:#ce9178;">'email'</span>] . <span style="color:#ce9178;">"'"</span>;
 
 <span style="color:#a6e3a1;">// ✅ Sécurisé avec PDO</span>
-$stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email");
-$stmt->execute([':email' => $_POST['email']]);</code></pre>
+<span style="color:#9cdcfe;">$stmt</span> = <span style="color:#9cdcfe;">$pdo</span>-><span style="color:#dcdcaa;">prepare</span>(<span style="color:#ce9178;">"SELECT * FROM users WHERE email = :email"</span>);
+<span style="color:#9cdcfe;">$stmt</span>-><span style="color:#dcdcaa;">execute</span>([<span style="color:#ce9178;">':email'</span> => <span style="color:#9cdcfe;">$_POST</span>[<span style="color:#ce9178;">'email'</span>]]);</code></pre>
             <p style="margin-top:0.75rem;"><strong>💡 Pourquoi ça marche ?</strong> PDO sépare le code SQL des données : la valeur saisie est traitée comme une simple chaîne de caractères, jamais comme du code.</p>
             <p><strong>🔗 Appliqué dans :</strong> RMS Ticket — toutes mes requêtes utilisent PDO avec des paramètres liés. Le Muscle Sympa — les formulaires de contact et d'inscription utilisent également PDO pour interroger la base de données.</p>
           </div>
@@ -115,11 +115,11 @@ $stmt->execute([':email' => $_POST['email']]);</code></pre>
             <p class="project-meta">📅 Février 2026 • Source : <a href="https://owasp.org/www-community/attacks/xss/" target="_blank" rel="noopener">OWASP</a></p>
             <p><strong>C'est quoi ?</strong> Si un utilisateur saisit <code>&lt;script&gt;alert('piraté')&lt;/script&gt;</code> dans un formulaire (ex : commentaire, nom…) et que je l'affiche sans protection, ce script s'exécute dans le navigateur de tous les visiteurs.</p>
             <p style="margin-top:0.75rem;"><strong>Comment j'évite ça ?</strong> Avec la fonction PHP <code>htmlspecialchars()</code> qui transforme les balises HTML en texte inoffensif avant l'affichage :</p>
-            <pre style="background:var(--surface2,#1e1e2e);padding:0.75rem 1rem;border-radius:8px;overflow-x:auto;font-size:0.85rem;margin-top:0.5rem;"><code><span style="color:#f38ba8;">// ❌ Dangereux : affiche le script tel quel</span>
-echo $_GET['nom'];
+            <pre style="background:var(--surface2,#1e1e2e);padding:0.75rem 1rem;border-radius:8px;overflow-x:auto;font-size:0.85rem;margin-top:0.5rem;color:#abb2bf;"><code><span style="color:#f38ba8;">// ❌ Dangereux : affiche le script tel quel</span>
+<span style="color:#569cd6;">echo</span> <span style="color:#9cdcfe;">$_GET</span>[<span style="color:#ce9178;">'nom'</span>];
 
 <span style="color:#a6e3a1;">// ✅ Sécurisé : &lt;script&gt; devient du texte affiché, pas exécuté</span>
-echo htmlspecialchars($_GET['nom'], ENT_QUOTES, 'UTF-8');</code></pre>
+<span style="color:#569cd6;">echo</span> <span style="color:#dcdcaa;">htmlspecialchars</span>(<span style="color:#9cdcfe;">$_GET</span>[<span style="color:#ce9178;">'nom'</span>], <span style="color:#b5cea8;">ENT_QUOTES</span>, <span style="color:#ce9178;">'UTF-8'</span>);</code></pre>
             <p style="margin-top:0.75rem;"><strong>💡 Résultat :</strong> Le <code>&lt;script&gt;</code> malveillant apparaît comme du texte à l'écran au lieu de s'exécuter.</p>
             <p><strong>🔗 Appliqué dans :</strong> RMS Ticket — tous les affichages de données provenant de la base de données passent par <code>htmlspecialchars()</code>. Le Muscle Sympa — les noms et messages saisis dans les formulaires sont échappés avant affichage.</p>
           </div>
@@ -132,16 +132,16 @@ echo htmlspecialchars($_GET['nom'], ENT_QUOTES, 'UTF-8');</code></pre>
             <p class="project-meta">📅 Février 2026 • Source : <a href="https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html" target="_blank" rel="noopener">OWASP Cheat Sheet</a></p>
             <p><strong>C'est quoi le problème ?</strong> Si la base de données est compromise et que les mots de passe sont stockés en clair (ou en MD5), l'attaquant les a immédiatement. Il faut les <strong>hacher</strong>, c'est-à-dire les transformer en une empreinte impossible à retrouver.</p>
             <p style="margin-top:0.75rem;"><strong>Comment je le fais ?</strong> Avec les fonctions natives PHP <code>password_hash()</code> et <code>password_verify()</code> :</p>
-            <pre style="background:var(--surface2,#1e1e2e);padding:0.75rem 1rem;border-radius:8px;overflow-x:auto;font-size:0.85rem;margin-top:0.5rem;"><code><span style="color:#f38ba8;">// ❌ Dangereux : mot de passe en clair ou MD5</span>
-$mdp = $_POST['password'];  // stocké tel quel
+            <pre style="background:var(--surface2,#1e1e2e);padding:0.75rem 1rem;border-radius:8px;overflow-x:auto;font-size:0.85rem;margin-top:0.5rem;color:#abb2bf;"><code><span style="color:#f38ba8;">// ❌ Dangereux : mot de passe en clair ou MD5</span>
+<span style="color:#9cdcfe;">$mdp</span> = <span style="color:#9cdcfe;">$_POST</span>[<span style="color:#ce9178;">'password'</span>];  <span style="color:#6a9955;">// stocké tel quel</span>
 
 <span style="color:#a6e3a1;">// ✅ Sécurisé : hachage avec bcrypt</span>
-$hash = password_hash($_POST['password'], PASSWORD_BCRYPT);
-// Stocke $hash en BDD (ex: $2y$10$abc123...)
+<span style="color:#9cdcfe;">$hash</span> = <span style="color:#dcdcaa;">password_hash</span>(<span style="color:#9cdcfe;">$_POST</span>[<span style="color:#ce9178;">'password'</span>], <span style="color:#b5cea8;">PASSWORD_BCRYPT</span>);
+<span style="color:#6a9955;">// Stocke $hash en BDD (ex: $2y$10$abc123...)</span>
 
-// Lors de la connexion :
-if (password_verify($_POST['password'], $hash)) {
-    // Connexion autorisée
+<span style="color:#6a9955;">// Lors de la connexion :</span>
+<span style="color:#569cd6;">if</span> (<span style="color:#dcdcaa;">password_verify</span>(<span style="color:#9cdcfe;">$_POST</span>[<span style="color:#ce9178;">'password'</span>], <span style="color:#9cdcfe;">$hash</span>)) {
+    <span style="color:#6a9955;">// Connexion autorisée</span>
 }</code></pre>
             <p style="margin-top:0.75rem;"><strong>💡 Pourquoi pas MD5 ?</strong> MD5 est trop rapide et il existe des tables de correspondance (rainbow tables) qui permettent de retrouver le mot de passe original. <code>password_hash()</code> utilise bcrypt qui est volontairement lent et ajoute un "sel" aléatoire automatiquement.</p>
             <p><strong>🔗 Appliqué dans :</strong> RMS Ticket — les mots de passe sont hachés avec <code>PASSWORD_BCRYPT</code> à l'inscription. Le Muscle Sympa — même fonctionnement pour les comptes utilisateurs du site.</p>
